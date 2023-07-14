@@ -1,6 +1,6 @@
 {
     "name": "vite-plugin-alias-html",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "type": "module",
     "description": "Vite plugin for resolving aliases in HTML.",
     "main": "./lib/index.js",
@@ -30,8 +30,10 @@
     "homepage": "https://github.com/sanhoe/vite-plugin-alias-html#readme",
     "devDependencies": {
         "@types/node": "^20.4.2",
-        "parse5": "^7.1.2",
         "typescript": "^5.1.6",
         "vite": "^4.4.3"
+    },
+    "dependencies": {
+        "parse5": "^7.1.2"
     }
 }
