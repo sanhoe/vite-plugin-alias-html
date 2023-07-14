@@ -1,0 +1,37 @@
+{
+    "name": "vite-plugin-alias-html",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "Vite plugin for resolving aliases in HTML.",
+    "main": "./lib/index.js",
+    "types": "./lib/index.d.ts",
+    "engines": {
+        "node": ">=16"
+    },
+    "scripts": {
+        "build": "tsc",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sanhoe/vite-plugin-alias-html.git"
+    },
+    "keywords": [
+        "vite",
+        "vite-plugin",
+        "alias",
+        "html"
+    ],
+    "author": "sanhoe",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/sanhoe/vite-plugin-alias-html/issues"
+    },
+    "homepage": "https://github.com/sanhoe/vite-plugin-alias-html#readme",
+    "devDependencies": {
+        "@types/node": "^20.4.2",
+        "parse5": "^7.1.2",
+        "typescript": "^5.1.6",
+        "vite": "^4.4.3"
+    }
+}
