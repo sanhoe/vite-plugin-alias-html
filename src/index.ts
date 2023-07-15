@@ -2,7 +2,7 @@ import { lstatSync } from 'node:fs';
 import { relative, dirname } from 'node:path';
 import { parseFragment as parse, serialize } from 'parse5';
 import type { Plugin } from 'vite';
-import type * as nodeType from '../node_modules/parse5/dist/tree-adapters/default.d.ts'
+import type { Node, ParentNode, ChildNode, Document, DocumentFragment, Element, CommentNode, TextNode, Template, DocumentType } from 'npm:parse5/dist/tree-adapters/default.d.ts'
 
 export default function vitePluginAliasHtml(): Plugin {
 
@@ -19,12 +19,16 @@ export default function vitePluginAliasHtml(): Plugin {
                 const ctxFilename = ctx.filename;
                 const isDirectory = lstatSync(ctxFilename).isDirectory();
 
-                function flatten(el: nodeType.ChildNode[], list: nodeType.ChildNode[] = []) {
+                function flatten(el: ChildNode[], list: ChildNode[] = []) {
                     el.forEach((item) => {
                         list.push(item);
 
                         if ('childNodes' in item && item.childNodes.length > 0) {
                             flatten(item.childNodes, list);
+                        }
+
+                        if ('tagName' in item && item.tagName === 'template' && 'content' in item && item.content.childNodes.length > 0) {
+                            flatten(item.content.childNodes, list);
                         }
                     });
 

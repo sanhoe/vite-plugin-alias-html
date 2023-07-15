@@ -1,5 +1,8 @@
 {
     "compilerOptions": {
+        "paths": {
+            "npm:*": ["./node_modules/*"]
+        },
         "target": "ES2022",
         "module": "Node16",
         "moduleResolution": "Node16",
